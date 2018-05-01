@@ -19,13 +19,14 @@ syntax ImportDeclaration
 	;
 	
 syntax ModuleDeclaration
-	= IfaceDecl: Modifier* "interface" DeclarationName "{" Declaration* "}"
+	= IfaceDecl: Modifier* "interface" "[" {Param ","}* "]" DeclarationName "{" Declaration* "}"
 	| ClassDecl: Modifier* "class" DeclarationName "{" Declaration* "}"
 	;
 	
 syntax DataDeclaration
 	= ValDecl: Modifier* "val" DeclarationName DataInitializer
 	| VarDecl: Modifier* "var" DeclarationName DataInitializer
+	| TypeDecl: Modifier* "type" DeclarationName DataInitializer
 	| TypedDecl: Modifier* Type DeclarationName DataInitializer
 	;
 
